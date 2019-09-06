@@ -9,6 +9,7 @@ The project analyzes the interactions that users have with articles on the IBM W
 
 1. Rank-based Recommendations:recommend the top articles with most interactions.
 2. User-user based Collaboractive Filtering: provide an orderd list of the most similar users to user A, finds articles user A hasn't seen before and provides A as recs (choose the users that have the most total article interactions before choosing those with fewer article interactions, when users who are all the same closeness to user A; choose articles with the articles with the most total interactions before choosing those with fewer total interactions)
+3. Content-based Recommendations: apply the natural language processing (NLP) to the titles of the articles to classify them, define the preference of the user based on their readings, calculate the similarity between each article and the user preference and make recommendations
 
 #### functions:
 1. get_top_articles(n, df=df): top_articles - (list) A list of the top 'n' article titles 
