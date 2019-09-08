@@ -7,11 +7,14 @@ ntlk
 ### Summary:
 The project analyzes the interactions that users have with articles on the IBM Watson Studio platform, and make recommendations to them with 1 Rank-based Recommendations, 2 User-user based Collaborative Filtering, 3 Content-based Recommendations, and 4 Matrix Factorization.
 
+![Image of result](https://github.com/ShuangyuandData/RecsysIBM/blob/master/IBMfigure.png)
+
 1. Rank-based Recommendations:recommend the top articles with most interactions.
 2. User-user based Collaboractive Filtering: provide an orderd list of the most similar users to user A, finds articles user A hasn't seen before and provides A as recs (choose the users that have the most total article interactions before choosing those with fewer article interactions, when users who are all the same closeness to user A; choose articles with the articles with the most total interactions before choosing those with fewer total interactions)
 3. Content-based Recommendations: apply the natural language processing (NLP) to the titles of the articles to classify them, define the preference of the user based on their readings, calculate the similarity between each article and the user preference and make recommendations
+4. Matrix Factorization: Build out a matrix decomposition (SVD) with the user-item interactions. Get an idea of how well the recommendation system can predict new articles an individual might interact with.
 
-#### functions:
+#### Functions:
 1. get_top_articles(n, df=df): top_articles - (list) A list of the top 'n' article titles 
 2. get_top_article_ids(n, df=df): top_articles - (list) A list of the top 'n' article titles 
 3. create_user_item_matrix(df): Return a matrix with user ids as rows and article ids on the columns with 1 values where a user interacted with an article and a 0 otherwise
@@ -22,3 +25,11 @@ The project analyzes the interactions that users have with articles on the IBM W
 8. get_top_sorted_users(user_id, df=df, user_item=user_item): neighbors_df - (pandas dataframe) a dataframe with: neighbor_id - is a neighbor user_id, similarity - measure of the similarity of each user to the provided user_id, num_interactions - the number of articles viewed by the user - if a u
 9. get_top_sorted_articles(article_list, df=df, user_item=user_item): final_list - a list with the articles with the most total interactions before those with fewer total interactions. 
 10. user_user_recs_part2(user_id, m=10): recs - (list) a list of recommendations for the user by article id, rec_names - (list) a list of recommendations for the user by article title
+11. tokenize(text): return the clean_tokens from 7text
+12. create_a_pool(df=df, n=100): a list with top n words
+13. userpreference(user, df=df): the weighted preference in genres
+14. dfsimilarity(user,df=df): a list of article id with the better similarity ahead based on the content
+15. make_content_recs(user, n, df=df): a list of artile id recommended
+
+### Reference:
+Udacity
