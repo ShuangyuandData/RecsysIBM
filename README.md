@@ -14,7 +14,7 @@ The project analyzes the interactions that users have with articles on the IBM W
 3. Content-based Recommendations: apply the natural language processing (NLP) to the titles of the articles to classify them, define the preference of the user based on their readings, calculate the similarity between each article and the user preference and make recommendations
 4. Matrix Factorization: Build out a matrix decomposition (SVD) with the user-item interactions. Get an idea of how well the recommendation system can predict new articles an individual might interact with.
 
-#### Functions:
+#### Description of Functions in main code file(Recommendations_with_IBMfinal.ipynb):
 1. get_top_articles(n, df=df): top_articles - (list) A list of the top 'n' article titles 
 2. get_top_article_ids(n, df=df): top_articles - (list) A list of the top 'n' article titles 
 3. create_user_item_matrix(df): Return a matrix with user ids as rows and article ids on the columns with 1 values where a user interacted with an article and a 0 otherwise
