@@ -5,14 +5,17 @@ Perform recommendation skills to use on real data from the IBM Watson Studio pla
 ntlk
 
 ### Summary:
-The project analyzes the interactions that users have with articles on the IBM Watson Studio platform, and make recommendations to them with 1 Rank-based Recommendations, 2 User-user based Collaborative Filtering, 3 Content-based Recommendations, and 4 Matrix Factorization.
+1. Analyze the interactions that users have with articles on the IBM Watson Studio platform, and make recommendations to them about new articles they will like.
+2. Explore 5148 users, 1051 articles, and 45993 user-article interactions. 
+3. Include 4 methods:(a) Rank-based Recommendations, (b) User-user based Collaborative Filtering, (c) Content-based Recommendations, and (d) Matrix Factorization (SVD: the accuracy on the test data reach over 96%).
+
 
 ![Image of result](https://github.com/ShuangyuandData/RecsysIBM/blob/master/IBMfigure.png)
 
-1. Rank-based Recommendations:recommend the top articles with most interactions.
-2. User-user based Collaboractive Filtering: provide an orderd list of the most similar users to user A, finds articles user A hasn't seen before and provides A as recs (choose the users that have the most total article interactions before choosing those with fewer article interactions, when users who are all the same closeness to user A; choose articles with the articles with the most total interactions before choosing those with fewer total interactions)
-3. Content-based Recommendations: apply the natural language processing (NLP) to the titles of the articles to classify them, define the preference of the user based on their readings, calculate the similarity between each article and the user preference and make recommendations
-4. Matrix Factorization: Build out a matrix decomposition (SVD) with the user-item interactions. Get an idea of how well the recommendation system can predict new articles an individual might interact with.
+(a). Rank-based Recommendations:recommend the top articles with most interactions.
+(b). User-user based Collaboractive Filtering: provide an orderd list of the most similar users to user A, finds articles user A hasn't seen before and provides A as recs (choose the users that have the most total article interactions before choosing those with fewer article interactions, when users who are all the same closeness to user A; choose articles with the articles with the most total interactions before choosing those with fewer total interactions)
+(c). Content-based Recommendations: apply the natural language processing (NLP) to the titles of the articles to classify them, define the preference of the user based on their readings, calculate the similarity between each article and the user preference and make recommendations
+(d). Matrix Factorization: Build out a matrix decomposition (SVD) with the user-item interactions. Get an idea of how well the recommendation system can predict new articles an individual might interact with.
 
 #### Description of Functions in main code file(Recommendations_with_IBMfinal.ipynb):
 1. get_top_articles(n, df=df): top_articles - (list) A list of the top 'n' article titles 
